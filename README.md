@@ -1,1 +1,1 @@
-<h1><center> Electronic Component Scanner</center></h1>
+<h1 align="center" >Electronic Component Scanner</h1>
