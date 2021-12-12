@@ -3,43 +3,55 @@ import "package:flutter/material.dart";
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Awesome App"),
-      ),
-      body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: SingleChildScrollView(
-            child: Card(
-                child: Column(children: [
-              Image.asset('images/file1131.jpg', fit: BoxFit.cover, width: 350, height: 200),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                myText,
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.blueAccent[400],
+    return caffold(
+        appBar: AppBar(
+          title: Text('Login Page'),
+        ),
+        body: Stack(children: [
+          Image.asset(
+            'images/plane.jpg',
+            height: MediaQuery.of(context).size.height,
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SingleChildScrollView(
+                  child: Card(
+                child: Column(
+                  children: [
+                    Form(
+                        child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          TextFormField(decoration: InputDecoration(hintText: "Enter Username", labelText: "Username")),
+                          TextFormField(obscureText: true, decoration: InputDecoration(hintText: "Enter Password", labelText: "Password"))
+                        ],
+                      ),
+                    )),
+                    SizedBox(height: 10),
+                    RaisedButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => HomePage_3()
+                        //   )
+                        // );
+
+                        // of can use
+                        Navigator.pushNamed(context, '/home');
+                      },
+                      child: Text("Sign In"),
+                      color: Colors.purpleAccent,
+                      textColor: Colors.white,
+                    ),
+                    SizedBox(height: 20)
+                  ],
                 ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                    controller: _nameController,
-                    // obscureText: true, for password **
-                    decoration: InputDecoration(hintText: "Enter something here", labelText: "Name", border: OutlineInputBorder())),
-              )
-            ])),
-          )),
-      drawer: MyDrawer(),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            myText = _nameController.text;
-            setState(() {});
-          },
-          child: Icon(Icons.refresh)),
-    );
+              )),
+            ),
+          ),
+        ]));
   }
 }
