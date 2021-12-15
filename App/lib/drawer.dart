@@ -6,17 +6,7 @@ class MyappdrawerWidget extends StatelessWidget {
           Widget build(BuildContext context) {
           // Figma Flutter Generator MyappdrawerWidget - FRAME
             return Container(
-      width: 212,
-      height: 285,
-      decoration: BoxDecoration(
-          borderRadius : BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
-          ),
-      color : Color.fromRGBO(255, 255, 255, 1),
-  ),
+     
       child: Stack(
         children: <Widget>[
           Positioned(
