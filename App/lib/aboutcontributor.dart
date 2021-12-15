@@ -23,15 +23,7 @@ class AboutcontributorWidget extends StatelessWidget {
           color : Color.fromRGBO(80, 200, 120, 0.8799999952316284),
   )
       )
-      ),Positioned(
-        top: 15,
-        left: 14,
-        child: Container(
-      width: 35,
-      height: 24,
-      decoration: BoxDecoration(
-          color : Color.fromRGBO(255, 255, 255, 1),
-  ),
+      ),
       child: Stack(
         children: <Widget>[
           Positioned(
